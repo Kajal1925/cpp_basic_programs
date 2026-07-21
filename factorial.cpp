@@ -1,14 +1,22 @@
 #include<iostream>
 using namespace std;
 
-int main(){
-    cout<<"To print factorial of a number"<<endl;
-    int n,factorial=1;
-    cout<<"Enter a number: ";
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        factorial=factorial*i;
+int factorial(int num){
+     int factorial=1;
+    if(num<=1){
+        return num;
     }
-    cout<<"Factorial is: "<<factorial;
+   int i=1;
+    while(i <= num){
+        factorial= factorial*i;
+        i++;
+    }
+    return factorial;
+}
+int main(){
+    int num;
+    cout<<"Enter a number: ";
+    cin>>num;
+    cout<<"Factorial of "<<num<<" = "<<factorial(num);
     return 0;
 }
